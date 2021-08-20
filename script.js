@@ -1,6 +1,6 @@
-let kenKenDefault = [["8X", , "4+"], ["10+", , "4X"], ["1", , , "11+"], ["3+"]];
+let kenKenRules = [["8X", , "4+"], ["10+", , "4X"], ["1", , , "11+"], ["3+"]];
 
-kenKenDefault.forEach(myFunction);
+kenKenRules.forEach(myFunction);
 
 function myFunction(value, rowIndex, array) {
   for (let colIndex = 0; colIndex < value.length; colIndex++) {
