@@ -6,6 +6,10 @@ body {
     background-color: burlywood;
 }
 
+h1 {
+    text-align: center;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -19,8 +23,19 @@ body {
     background-color: lightblue;;
 }
 
+/*
 #box1, #box3, #box5, #box7, #box13, #box15 {
     border-top: 3px solid black;
     border-left: 3px solid black;
     border-bottom: 3px solid black;
+}
+*/
+
+span {
+    display: inline-block;
+    margin: .5rem 0 0 .5rem;
+}
+
+.grid-items {
+    border: 1px solid black;
 }
