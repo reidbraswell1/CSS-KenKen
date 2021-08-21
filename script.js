@@ -1,4 +1,4 @@
-let kenKenRules = [["8X", , "4+"], ["10+", , "4X"], ["1", , , "11+"], ["3+"]];
+let kenKenRules = [["8×", , "4+"], ["10+", , "4×"], ["1", , , "11+"], ["3+"]];
 
 kenKenRules.forEach(myFunction);
 
@@ -11,22 +11,27 @@ function myFunction(value, rowIndex, array) {
           switch (colIndex) {
             case 0:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box1").innerText = value[colIndex];
+                let box1 = document.getElementById("box1");
+                box1.style.borderLeft="5px solid black";
+                box1.style.borderTop="5px solid black";
+                box1.style.borderBottom="5px solid black";
+                let prompt1 = document.getElementById("prompt-1");
+                prompt1.innerText = value[colIndex];
               }
               break;
             case 1:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box2").innerText = value[colIndex];
+                document.getElementById("prompt-2").innerText = value[colIndex];
               }
               break;
             case 2:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box3").innerText = value[colIndex];
+                document.getElementById("prompt-3").innerText = value[colIndex];
               }
               break;
             case 3:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box4").innerText = value[colIndex];
+                document.getElementById("prompt-4").innerText = value[colIndex];
               }
               break;
           }
@@ -35,22 +40,22 @@ function myFunction(value, rowIndex, array) {
           switch (colIndex) {
             case 0:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box5").innerText = value[colIndex];
+                document.getElementById("prompt-5").innerText = value[colIndex];
               }
               break;
             case 1:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box6").innerText = value[colIndex];
+                document.getElementById("prompt-6").innerText = value[colIndex];
               }
               break;
             case 2:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box7").innerText = value[colIndex];
+                document.getElementById("prompt-7").innerText = value[colIndex];
               }
               break;
             case 3:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box8").innerText = value[colIndex];
+                document.getElementById("prompt-8").innerText = value[colIndex];
               }
               break;
           }
@@ -59,22 +64,22 @@ function myFunction(value, rowIndex, array) {
           switch (colIndex) {
             case 0:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box9").innerText = value[colIndex];
+                document.getElementById("prompt-9").innerText = value[colIndex];
               }
               break;
             case 1:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box10").innerText = value[colIndex];
+                document.getElementById("prompt-10").innerText = value[colIndex];
               }
               break;
             case 2:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box11").innerText = value[colIndex];
+                document.getElementById("prompt-11").innerText = value[colIndex];
               }
               break;
             case 3:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box12").innerText = value[colIndex];
+                document.getElementById("prompt-12").innerText = value[colIndex];
               }
               break;
           }
@@ -83,22 +88,22 @@ function myFunction(value, rowIndex, array) {
           switch (colIndex) {
             case 0:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box13").innerText = value[colIndex];
+                document.getElementById("prompt-13").innerText = value[colIndex];
               }
               break;
             case 1:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box14").innerText = value[colIndex];
+                document.getElementById("prompt-14").innerText = value[colIndex];
               }
               break;
             case 2:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box15").innerText = value[colIndex];
+                document.getElementById("prompt-15").innerText = value[colIndex];
               }
               break;
             case 3:
               if (typeof value[colIndex] != "undefined") {
-                document.getElementById("box16").innerText = value[colIndex];
+                document.getElementById("prompt-16").innerText = value[colIndex];
               }
               break;
           }
