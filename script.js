@@ -21,6 +21,9 @@ for (let rowIndex = 0; rowIndex < kenKenRules.length; rowIndex++) {
         `colValue=${colValue} \n colStyle=${colStyle} \n boxNumber=${boxNumber}`
       );
       console.log(`Row [${rowIndex}] Column [${colIndex}] = ${colValue}`);
+      for(let gridCageStyleIndex = 0; gridCageStyleIndex < colStyleArray.length; gridCageStyleIndex++) {
+        
+      }
     }
     if (colValue != "undefined") {
       switch (rowIndex) {
