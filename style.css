@@ -6,6 +6,10 @@ body {
     background-color: burlywood;
 }
 
+.flex {
+    display: flex;
+}
+
 h1 {
     text-align: center;
 }
@@ -34,6 +38,10 @@ h1 {
 span {
     display: inline-block;
     margin: .5rem 0 0 .5rem;
+}
+
+input {
+    display: inline-block;
 }
 
 .grid-items {
