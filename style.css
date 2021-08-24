@@ -10,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    justify-content: space-between;
 }
 
 .flex-submit {
@@ -22,14 +23,22 @@ body {
 .promptf {
     height: 20%;
     width: 100%;
+    background-color: green;
 
 }
 
+.errors {
+    height: 20%;
+    width: 100%;
+    background-color: orange;
+}
+
 .inputs {
-    margin-top: 15%;
+    margin-top: ;
     height: 20%;
     width: 100%;
     text-align: center;
+    background-color: blue;
 }
 
 h1 {
