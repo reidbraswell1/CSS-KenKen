@@ -1,331 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>KenKen Exercise</title>
-  </head>
-  <body>
-    <main>
-      <h1>KenKen Exercise</h1>
-      <form id="kenken-form" method="POST" action="javascript:controller()">
-        <div class="grid">
-          <div id="box1" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-1" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-1"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-1">q</span>
-              </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>KenKen Exercise</title>
+</head>
+
+<body>
+  <main>
+    <h1>KenKen Exercise</h1>
+    <form id="kenken-form" name="kenken-form"
+      onsubmit="return validateForm(input1.value,input2.value,input3.value,input4.value,input5.value,input6.value,input7.value,input8.value,input9.value,input10.value,input11.value,input12.value,input13.value,input14.value,input15.value,input16.value)"
+      method="POST" action="javascript:controller()">
+      <div class="grid">
+        <div id="box1" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-1" class="prompt"></span>
             </div>
-          </div>
-          <div id="box2" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-2" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-2"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-2">q</span>
-              </div>
+            <div class="inputs">
+              <input id="input1" name="input1" type="text" maxlength="1" size="1" required />
             </div>
-          </div>
-          <div id="box3" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-3" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-3"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-3">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box4" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-4" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-4"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-4">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box5" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-5" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-5"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-5">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box6" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-6" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-6"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-6">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box7" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-7" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-7"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-7">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box8" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-8" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-8"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-8">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box9" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-9" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-9"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-9">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box10" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-10" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-10"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-10">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box11" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-11" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-11"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-11">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box12" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-12" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-12"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-12">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box13" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-13" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-13"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-13">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box14" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-14" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-14"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-14">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box15" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-15" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-15"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-15">q</span>
-              </div>
-            </div>
-          </div>
-          <div id="box16" class="grid-items">
-            <div class="flex">
-              <div class="promptf">
-                <span id="prompt-16" class="prompt"></span>
-              </div>
-              <div class="inputs">
-                <input
-                  id="input-16"
-                  type="text"
-                  maxlength="1"
-                  size="1"
-                  required
-                />
-              </div>
-              <div class="errors">
-                <span id="error-box-16">q</span>
-              </div>
+            <div class="errors">
+              <span id="error-box-1"></span>
             </div>
           </div>
         </div>
-        <div class="grid2">
-          <div id="sumit" class="submit-item">
-            <div class="flex-submit">
-              <button type="submit">Submit</button>
+        <div id="box2" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-2" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input2" name="input2" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-2"></span>
             </div>
           </div>
         </div>
-      </form>
-    </main>
-    <script src="script.js"></script>
-  </body>
+        <div id="box3" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-3" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input3" name="input3" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-3"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box4" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-4" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input4" name="input4" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-4"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box5" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-5" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input5" name="input5" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-5"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box6" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-6" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input6" name="input6" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-6"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box7" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-7" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input7" name="input7" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-7"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box8" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-8" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input8" name="input8" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-8"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box9" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-9" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input9" name="input9" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-9"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box10" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-10" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input10" name="input10" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-10"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box11" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-11" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input11" name="input11" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-11"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box12" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-12" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input12" name="input12" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-12"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box13" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-13" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input13" name="input13" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-13"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box14" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-14" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input14" name="input14" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-14"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box15" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-15" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input15" name="input15" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-15"></span>
+            </div>
+          </div>
+        </div>
+        <div id="box16" class="grid-items">
+          <div class="flex">
+            <div class="promptf">
+              <span id="prompt-16" class="prompt"></span>
+            </div>
+            <div class="inputs">
+              <input id="input16" name="input16" type="text" maxlength="1" size="1" required />
+            </div>
+            <div class="errors">
+              <span id="error-box-16"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid2">
+        <div id="sumit" class="submit-item">
+          <div class="flex-submit">
+            <button id="submit-button" class="buttons" type="submit">Submit</button>
+            <button id="reset-button" class="buttons" type="reset">Reset</button>
+          </div>
+        </div>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+
 </html>
