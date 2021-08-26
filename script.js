@@ -212,36 +212,37 @@ function applyStyle(element, styleRule, border) {
   }
 }
 
-function validateForm(input1,input2,input3,input4,input5,input6,input7,input8,input9,input10,input11,input12,input13,input14,input15,input16) {
+function validateForm(){
   console.log(`---Start validateForm()---`);
+  //console.log(`Input-1=${input1}`);
+  let argumentsArray = Array.prototype.slice.apply(arguments); 
+  console.log(arguments.length);
 
   let errorColor = "red";
-  console.log(`Input-1=${input1}`);
-  console.log(`Input-2=${input2}`);
-  console.log(`Input-3=${input3}`);
-  console.log(`Input-4=${input4}`);
-  console.log(`Input-5=${input5}`);
-  console.log(`Input-6=${input6}`);
-  console.log(`Input-7=${input7}`);
-  console.log(`Input-8=${input8}`);
-  console.log(`Input-9=${input9}`);
-  console.log(`Input-10=${input10}`);
-  console.log(`Input-11=${input11}`);
-  console.log(`Input-12=${input12}`);
-  console.log(`Input-13=${input13}`);
-  console.log(`Input-14=${input14}`);
-  console.log(`Input-15=${input15}`);
-  console.log(`Input-16=${input16}`);
-  let regexp=new RegExp("[^0-9]");
-  if(regexp.test(input1)) {
-    let errorLine = document.getElementById("error-box-1");
-    errorLine.style.color=errorColor;
-    errorLine.innerText="Not a number";
+  for(let inputIndex=0; inputIndex < 16; inputIndex++) {
+    console.log(`Input-${inputIndex+1}=${arguments[inputIndex]}`);
   }
-  if(regexp.test(input2)) {
-    let errorLine = document.getElementById("error-box-2");
-    errorLine.style.color=errorColor;
-    errorLine.innerText="Not a number";
+  let regexp=new RegExp("[^0-9]");
+  let errorLine=null;
+  for(let inputIndex=0; inputIndex < 16; inputIndex++) {
+    if(regexp.test(arguments[inputIndex])){
+      switch(inputIndex) {
+        case 0:
+          errorLine = document.getElementById("error-box-1");
+          break;
+        case 1:
+          errorLine = document.getElementById("error-box-2");
+          break;
+        case 3:
+          errorLine = document.getElementById("error-box-3");
+          break;
+        case 4:
+          errorLine = document.getElementById("error-box-4");
+          break;
+      }
+      errorLine.style.color=errorColor;
+      errorLine.innerText="Not a number";
+    }
   }
   return false;
 }
