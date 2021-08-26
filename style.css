@@ -88,7 +88,8 @@ span {
 
 input {
     display: inline-block;
-    width: 9%;
+    text-align: center;
+    width: 20%;
     font-size: x-large;
 }
 
