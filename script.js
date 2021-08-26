@@ -214,34 +214,30 @@ function applyStyle(element, styleRule, border) {
 
 function validateForm(){
   console.log(`---Start validateForm()---`);
-  //console.log(`Input-1=${input1}`);
-  let argumentsArray = Array.prototype.slice.apply(arguments); 
-  console.log(arguments.length);
 
-  let errorColor = "red";
-  for(let inputIndex=0; inputIndex < 16; inputIndex++) {
-    console.log(`Input-${inputIndex+1}=${arguments[inputIndex]}`);
+  const gridBoxCount = 16;
+  const errorColor = "red";
+  const regexp = new RegExp("[^1-4]");
+
+  let argumentsArray = Array.prototype.slice.apply(arguments); 
+
+  resetErrorLines();
+  
+  for(let inputIndex=0; inputIndex < gridBoxCount; inputIndex++) {
+    console.log(`Input-${inputIndex+1}=${arguments[inputIndex]}\n`);
   }
-  let regexp=new RegExp("[^0-9]");
-  let errorLine=null;
-  for(let inputIndex=0; inputIndex < 16; inputIndex++) {
+
+  for(let inputIndex=0; inputIndex < gridBoxCount; inputIndex++) {
     if(regexp.test(arguments[inputIndex])){
-      switch(inputIndex) {
-        case 0:
-          errorLine = document.getElementById("error-box-1");
-          break;
-        case 1:
-          errorLine = document.getElementById("error-box-2");
-          break;
-        case 3:
-          errorLine = document.getElementById("error-box-3");
-          break;
-        case 4:
-          errorLine = document.getElementById("error-box-4");
-          break;
-      }
+      let errorLine = document.getElementById(`error-box-${inputIndex+1}`);
       errorLine.style.color=errorColor;
-      errorLine.innerText="Not a number";
+      errorLine.innerText="1-4 only!";
+    }
+  }
+  function resetErrorLines() {
+    for(let inputIndex=0; inputIndex < gridBoxCount; inputIndex++) {
+      let errorLine = document.getElementById(`error-box-${inputIndex+1}`);
+      errorLine.innerText="";
     }
   }
   return false;
