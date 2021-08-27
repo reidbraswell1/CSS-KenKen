@@ -268,12 +268,14 @@ function validateForm(){
     let duplicateIndexes = [];
     for(let i=0; i<duplicates.length; i++) {
       for(let y=0; y<4;y++) {
-        duplicateIndexes.push(row1Array.slice([y]).indexOf(duplicates[i])+y);
+        if(row1Array[y] == duplicates[i]) {
+          duplicateIndexes.push(y);
+        }
       }
     }
     console.log(duplicateIndexes);
     for(let j=0; j<duplicateIndexes.length;j++) {
-      let errorLine = document.getElementById(`error-box-${j+1}`);
+      let errorLine = document.getElementById(`error-box-${duplicateIndexes[j]+1}`);
       errorLine.style.color=errorColor;
       errorLine.innerText="No Duplicates!";
     }
