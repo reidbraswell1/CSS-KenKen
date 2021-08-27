@@ -217,28 +217,64 @@ function validateForm(){
 
   const gridBoxCount = 16;
   const errorColor = "red";
+
+  // Regular expression for testing for numeric characters 1-4
   const regexp = new RegExp("[^1-4]");
+  let errorFlag = false;
 
   let argumentsArray = Array.prototype.slice.apply(arguments); 
 
   resetErrorLines();
   
+  // Log  the input arguments
   for(let inputIndex=0; inputIndex < gridBoxCount; inputIndex++) {
     console.log(`Input-${inputIndex+1}=${arguments[inputIndex]}\n`);
   }
 
+  // Check for any character other than 1-4
   for(let inputIndex=0; inputIndex < gridBoxCount; inputIndex++) {
     if(regexp.test(arguments[inputIndex])){
       let errorLine = document.getElementById(`error-box-${inputIndex+1}`);
       errorLine.style.color=errorColor;
       errorLine.innerText="1-4 only!";
+      errorFlag = true;
     }
   }
+
+  checkForDuplicateValues();
+
+  // Inner function to reset the error lines to space
   function resetErrorLines() {
     for(let inputIndex=0; inputIndex < gridBoxCount; inputIndex++) {
       let errorLine = document.getElementById(`error-box-${inputIndex+1}`);
       errorLine.innerText="";
     }
   }
-  return false;
+
+  // Inner Function to check for duplicate numbers in rows or columns
+  function checkForDuplicateValues() {
+    // Row 1
+    const row1Array = argumentsArray.slice(0,4);
+    const set = new Set(row1Array);
+    const duplicates = row1Array.filter((item,index,array)  => {
+      if (set.has(item)) {
+          console.log(index, item);
+          //set.delete(item);
+          return index;
+      }
+    });
+    console.log(duplicates);
+    for(let i=0; i<duplicates.length; i++) {
+        let errorLine = document.getElementById(`error-box-${i+1}`);
+        errorLine.style.color=errorColor;
+        errorLine.innerText="No Duplicates!";
+    }
+  }
+
+  if(errorFlag) {
+    return false;
+  }
+  else {
+    return true;
+  }
 }
