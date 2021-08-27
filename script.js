@@ -258,16 +258,24 @@ function validateForm(){
     const set = new Set(row1Array);
     const duplicates = row1Array.filter((item,index,array)  => {
       if (set.has(item)) {
-          console.log(index, item);
-          //set.delete(item);
-          return index;
+          set.delete(item);
+      }
+      else {
+          return item;
       }
     });
     console.log(duplicates);
+    let duplicateIndexes = [];
     for(let i=0; i<duplicates.length; i++) {
-        let errorLine = document.getElementById(`error-box-${i+1}`);
-        errorLine.style.color=errorColor;
-        errorLine.innerText="No Duplicates!";
+      for(let y=0; y<4;y++) {
+        duplicateIndexes.push(row1Array.slice([y]).indexOf(duplicates[i])+y);
+      }
+    }
+    console.log(duplicateIndexes);
+    for(let j=0; j<duplicateIndexes.length;j++) {
+      let errorLine = document.getElementById(`error-box-${j+1}`);
+      errorLine.style.color=errorColor;
+      errorLine.innerText="No Duplicates!";
     }
   }
 
